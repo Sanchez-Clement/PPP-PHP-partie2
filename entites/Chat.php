@@ -6,8 +6,10 @@ class Chat {
   protected $Color;
   const MALE = "M";
   const FEMELLE = "F";
-  const NOIRE = "noire";
-  const BLANC = "blanc";
+  const couleur = [
+    "BLANC" => 'blanche',
+    'NOIRE' => 'noire',
+  ];
 
   public function __construct($nom,$age,$sexe,$color)
   {
@@ -44,7 +46,7 @@ if (is_string($nom) && strlen($nom)<15) {
 
 public function setAge($age)
 {
-$age = int ($age);
+
 if ($age > 0 && $age < 30) {
   $this->Age = $age;
 }
@@ -52,14 +54,18 @@ if ($age > 0 && $age < 30) {
 
 public function setSexe($sexe)
 {
-if (in_array($sexe, [self::MALE,self::FEMELLE])) {
+// if (in_array($sexe, [self::MALE,self::FEMELLE])) {
   $this->Sexe = $sexe;
-}
+// }
 }
 public function setColor($color)
 {
-if (in_array($color, [self::NOIRE,self::BLANC])) {
-  $this->Color = $color;
+  
+foreach (self::couleur as $key => $value) {
+if ($value == $color) {
+  $this->Color=$value;
+}
+
 }
 }
 

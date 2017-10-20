@@ -25,6 +25,16 @@ private $bdd;
 'color' => $chat->getColor()
 
     ]);
+
+
+
+  }
+  public function getListChat () {
+    
+    $reponse = $this->bdd->query('SELECT * from Chat');
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
+      return $donnees;
+
   }
 }
  ?>

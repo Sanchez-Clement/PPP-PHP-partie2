@@ -79,14 +79,7 @@
 // $Megane->setPrice(20000);
 // echo $Twingo->getPrice();
 
-function chargerClasse($classname)
-{
-  require "entites/" . $classname.'.php';
-
-};
-spl_autoload_register('chargerClasse');
-require "modele/connexion_sql.php";
-require "modele/ChatManager.php";
+require "controleur/index.php";
 
 
      ?>
